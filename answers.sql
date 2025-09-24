@@ -1,5 +1,7 @@
 --Week 6: Joins and Relationships
 -- Question 1: Get employee details with office code using INNER JOIN
+  --Returns only employees who have a valid office code that exists in the offices table
+  --Excludes any employees with NULL or invalid office codes
 SELECT e.firstName, e.lastName, e.email, e.officeCode
 FROM employees e
 INNER JOIN offices o ON e.officeCode = o.officeCode;
@@ -15,6 +17,9 @@ FROM customers c
 RIGHT JOIN orders o ON c.customerNumber = o.customerNumber
 ORDER BY o.orderDate
 LIMIT 10;
+
+--Used table aliases (e, o, p, pl, c) for better readability
+
 
 
 
