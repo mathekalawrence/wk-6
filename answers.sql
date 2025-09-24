@@ -9,6 +9,12 @@ SELECT p.productName, p.productVendor, p.productLine
 FROM products p
 LEFT JOIN productlines pl ON p.productLine = pl.productLine;
 
+-- Question 3: Get order details with customer info using RIGHT JOIN (first 10 orders)
+SELECT o.orderDate, o.shippedDate, o.status, o.customerNumber
+FROM customers c
+RIGHT JOIN orders o ON c.customerNumber = o.customerNumber
+ORDER BY o.orderDate
+LIMIT 10;
 
 
 
